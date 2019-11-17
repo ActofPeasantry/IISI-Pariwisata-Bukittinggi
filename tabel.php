@@ -23,4 +23,4 @@
           $keterangan=$baris['keterangan'];
           
           $dataarray[]=array('id_tempat_wisata'=>$id_tempat_wisata,'nama_tempat_wisata'=>$nama_tempat_wisata,'lokasi'=>$lokasi,'jam_buka'=>$jam_buka,'jam_tutup'=>$jam_tutup,'biaya'=>$biaya, 'fasilitas'=>$fasilitas, 'keterangan'=>$keterangan);
-?>
+    }

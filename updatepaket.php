@@ -35,7 +35,7 @@ $id = $_GET["id"];
     <script src="assets/js/bootstrap.min.js"></script>
     <script type="text/javascript">
 
-    var server = "https://gissurya.org/wisatasumbar/";
+    var server = "https:///";
 
   function getserial(serial){
     var input = document.getElementById('serial_number');
@@ -60,9 +60,9 @@ $id = $_GET["id"];
       var objek =document.getElementById('n3').value;
       
       if (objek!=0 && city!=0){
-        $.ajax({url: "https://gissurya.org/wisatasumbar/cariobjek.php?objek="+objek+"&city="+city, data: "", dataType: 'json', success: function(rows){
+        $.ajax({url: "http://localhost/wisatasumbar/cariobjek.php?objek="+objek+"&city="+city, data: "", dataType: 'json', success: function(rows){
           console.log(rows);
-          console.log("https://gissurya.org/wisatasumbar/cariobjek.php?objek="+objek+"&city="+city); 
+          console.log("http://localhost/wisatasumbar/cariobjek.php?objek="+objek+"&city="+city); 
             if (objek=="1") {
               // console.log("jalan1");
               for (var i in rows){
@@ -346,7 +346,7 @@ while($row = pg_fetch_array($data0)){
   <div class="col-sm-8"> 
                   <section class="panel">
                       <header class="panel-heading">
-            <h2 class="box-title" style="text-transform:capitalize;"><b> <?php echo $name ?></b></h2>
+            <h2 class="box-title" style="text-transform:capitalize;"><b></b></h2>
               
                       </header>
                       <div class="panel-body">

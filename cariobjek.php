@@ -70,5 +70,3 @@ while($row = pg_fetch_array($result))
     }
 echo json_encode ($dataarray3);
 }
-
-?>

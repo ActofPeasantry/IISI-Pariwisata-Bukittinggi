@@ -175,8 +175,11 @@ while($row = pg_fetch_array($hasil))
 
                     <?php 
                        require 'connect.php';
-                        $id = $_GET["id_package"];
-                 //       echo "ini : packet $id";
+                       if(isset($_GET["id_package"]))
+                       {
+                         $id = $_GET["id_package"];
+                         echo "ini : packet $id";
+                       } 
 
                        
                           $sqlreview = "SELECT * from info where id_package = '$id'";
@@ -218,17 +221,17 @@ while($row = pg_fetch_array($hasil))
 
                   <!--     <div class="panel-body"> -->
                       <form method="POST" action="insertcomment.php">
-                        <input type="hidden" name="id" value="<?php echo $_GET['id_package']?>" >
+                        <input type="hidden" name="id" value="<?php echo $id;?>" >
                         <table id="" class="table">
                           <tbody  style='vertical-align:top;'>
                              <?php 
                     
                     //$u = $_SESSION['username'];
                     //echo "username $u";
-                    if($_SESSION['c'] == true)
-                       {
-                        $username = $_SESSION['username'];
-                        //echo "nama $username";
+                    // if($_SESSION['c'] == true)
+                    //    {
+                    //     $username = $_SESSION['username'];
+                    //     //echo "nama $username";
                           echo "
                             <tr>
                               <td>Comment</td>
@@ -236,9 +239,9 @@ while($row = pg_fetch_array($hasil))
                               <td><textarea cols='30' rows='5' name='comment'></textarea></td>
                             </tr>
                             <tr>
-                              <td><input type='submit' name='' value='send'></td><td><input name='nama' value='$username' hidden></td>
+                              <td><input type='submit' name='' value='send'></td><td><input name='nama' value='' hidden></td>
                             </tr>";
-                      }
+                      // }
                      ?>                            
                           </tbody>          
                         </table>
@@ -246,7 +249,7 @@ while($row = pg_fetch_array($hasil))
 
                         <?php 
                         
-                        $id = $_GET["id_package"];
+                        // $id = $_GET["id_package"];
                           $sqlreview = "SELECT * from review where id_package = '$id'";
                         
                           

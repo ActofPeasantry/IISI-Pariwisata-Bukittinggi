@@ -252,6 +252,17 @@ while($row = pg_fetch_array($hasil)){
                               <td><input type='submit' name='' value='send'></td><td><input name='nama' value='$username' hidden></td>
                             </tr>";
                       }
+                      else{
+                        echo "
+                            <tr>
+                              <td>Comment</td>
+                              <td>:</td>
+                              <td><textarea cols='30' rows='5' name='comment'></textarea></td>
+                            </tr>
+                            <tr>
+                              <td><input type='submit' name='' value='send'></td><td><input name='nama' value='' hidden></td>
+                            </tr>";
+                      }
   ?>
 
 
@@ -275,8 +286,8 @@ while($row = pg_fetch_array($hasil)){
                             $komen = $rows['comment'];
                             echo "<tr><td>Name</td><td>:</td><td>$nama</td></tr><tr><td>Comment</td><td>:</td><td>$komen</td></tr>";
                           }
-                        echo "$nama";
-                      echo "$komen";
+                      //   echo "$nama";
+                      // echo "$komen";
 
 
                          ?>

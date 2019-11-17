@@ -221,10 +221,10 @@ session_start();
                     
                     //$u = $_SESSION['username'];
                     //echo "username $u";
-                    if($_SESSION['c'] == true)
-                       {
-                        $username = $_SESSION['username'];
-                        //echo "nama $username";
+                    // if($_SESSION['c'] == true)
+                    //    {
+                    //     $username = $_SESSION['username'];
+                    //     //echo "nama $username";
                           echo "
                             <tr>
                               <td>Comment</td>
@@ -232,9 +232,9 @@ session_start();
                               <td><textarea cols='30' rows='5' name='comment'></textarea></td>
                             </tr>
                             <tr>
-                              <td><input type='submit' name='' value='send'></td><td><input name='nama' value='$username' hidden></td>
+                              <td><input type='submit' name='' value='send'></td><td><input name='nama' value='' hidden></td>
                             </tr>";
-                      }
+                      // }
                      ?>                            
                           </tbody>          
                         </table>

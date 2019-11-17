@@ -147,8 +147,16 @@ include("connect.php");?>
                               </select>
                               <br>
                               <br>
-                                <select class="form-control select2" style="width: 100%;" id="cariobjek" ></select>
-                              <br>
+                                <select class="form-control select2" style="width: 100%;" id="cariobjek" >
+                                <!-- <option value="">-- Choose Subject </option>
+                                <option value="S0051">Mangkuak</option>
+                                <option value="S0001">oleh oleh khas ikan bilih</option>
+                                <option value="S0052">Samek</option>
+                                <option value="S0053">Sikek Kutu</option>
+                                <option value="S0027">Nan Sari Gallery</option> -->
+                              </select>
+                                
+                                <br>
                                 <button type="submit" class="btn btn-default" id="carides"  value="cari" onclick="carides()"><i class="fa fa-search"></i></button>
                           </div>
                       </ul>

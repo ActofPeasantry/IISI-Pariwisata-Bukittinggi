@@ -9,7 +9,7 @@ $id = $_GET["id"];
 3 rm
 4 tw
 */
- 
+
 if ($status == 1) {
 	$querysearch = " SELECT object_point.id_package, package.name, package.price, package.id_travel FROM object_point left join package on package.id = object_point.id_package where id_souvenir = '$id' ";
 } else if ($status == 2) {
@@ -20,16 +20,21 @@ if ($status == 1) {
 	$querysearch = " SELECT object_point.id_package, package.name, package.price, package.id_travel FROM object_point left join package on package.id = object_point.id_package where id_tourism = '$id' ";
 }
 
+$hasil = pg_query($querysearch);
+$data1 = [];
+while ($row = pg_fetch_array($hasil)) {
+	$id = $row['id_package'];
+	$id_travel = $row['id_travel'];
+	$name = $row['name'];
+	$price = $row['price'];
+	$dataarray = [
+		'id' => $id,
+		'id_travel' => $id_travel,
+		'name' => $name,
+		'price' => $price
+	];
 
-$hasil=pg_query($querysearch);
-while($row = pg_fetch_array($hasil))
-	{
-		  $id=$row['id_package'];
-		  $id_travel=$row['id_travel'];
-		  $name=$row['name'];
-		  $price=$row['price'];
-		  $dataarray[]=array('id'=>$id,'id_travel'=>$id_travel,'name'=>$name,'price'=>$price);  
-	}
-echo json_encode ($dataarray);
-?>
+	array_push($data1, $dataarray);
+}
 
+echo json_encode($data1);

@@ -33,7 +33,7 @@ include("connect.php");?>
     <script type="text/javascript">
 
 
-    var server = "https://gissurya.org/wisatasumbar/";
+    var server = "https:///";
     var map;
     var markersDua = [];
     var markersDkt = [];
@@ -61,9 +61,9 @@ function cariobjek(){
       var objek =document.getElementById('objek').value;
       
       if (objek!=0 && city!=0){
-        $.ajax({url: "https://gissurya.org/wisatasumbar/cariobjek.php?objek="+objek+"&city="+city, data: "", dataType: 'json', success: function(rows){
+        $.ajax({url: "http://localhost/wisatasumbar/cariobjek.php?objek="+objek+"&city="+city, data: "", dataType: 'json', success: function(rows){
           console.log(rows);
-          console.log("https://gissurya.org/wisatasumbar/cariobjek.php?objek="+objek+"&city="+city); 
+          console.log("http://localhost/wisatasumbar/cariobjek.php?objek="+objek+"&city="+city); 
            if (objek=="1") {
               // console.log("jalan1");
               for (var i in rows){
@@ -162,9 +162,9 @@ function simpanpaket(){
       var id = document.getElementById('id').value;
       var id_travel = document.getElementById('id_travel').value;
       var name = document.getElementById('name').value;
-      $.ajax({url: "https://gissurya.org/wisatasumbar/simpanpaket.php?id="+id+"&id_travel="+id_travel+"&name="+name+"&price="+price, data: "", dataType: 'json', success: function(rows){
+      $.ajax({url: "http://localhost/wisatasumbar/simpanpaket.php?id="+id+"&id_travel="+id_travel+"&name="+name+"&price="+price, data: "", dataType: 'json', success: function(rows){
           //console.log(rows);
-          console.log("https://gissurya.org/wisatasumbar/simpanpaket.php?id="+id+"&id_travel="+id_travel); 
+          console.log("http://localhost/wisatasumbar/simpanpaket.php?id="+id+"&id_travel="+id_travel); 
           
 
       }});//end ajax
@@ -429,7 +429,7 @@ function show3(){
               <div class="form-group row" id="data0" style="display:none;">
                 <label for="example-search-input" class="col-sm-3 col-form-label">Choose City</label>
                   <div class="col-sm-6">
-                    <select class="form-control select2" style="width: 100%;" id="city" onchange="cariobjek()">
+                    <select class="form-control select2" style="width: 100%;" id="city" onchange="">
                         <option value="0">-- Choose City --</option>
                           <?php
                             $sql = pg_query("select * from city");
@@ -443,7 +443,7 @@ function show3(){
               <div class="form-group row" id="data1" style="display:none;">
                 <label for="example-search-input" class="col-sm-3 col-form-label">Choose Object</label>
                   <div class="col-sm-6">
-                    <select class="form-control select2" style="width: 100%;" id="objek" onchange="cariobjek()">
+                    <select class="form-control select2" style="width: 100%;" id="objek" onchange="">
                         <option value="0">-- Choose Object --</option>
                         <option value="1">Souvenir</option>
                         <option value="2">Mosque</option>
@@ -457,7 +457,14 @@ function show3(){
               <div class="form-group row" id="data2" style="display:none;">
                   <label for="example-search-input" class="col-sm-3 col-form-label">Choose Place</label>
                   <div class="col-sm-6">
-                    <select class="form-control select2" style="width: 100%;" id="cariobjek"></select>
+                    <select class="form-control select2" style="width: 100%;" id="cariobjek">
+                    <option value="">-- Choose Object --</option>
+                    <option value="S0051">Mangkuak</option>
+                    <option value="S0001">oleh oleh khas ikan bilih</option>
+                    <option value="S0052">Samek</option>
+                    <option value="S0053">Sikek Kutu</option>
+                    <option value="S0027">Nan Sari Gallery</option>
+                  </select>
                   </div>
 
                 <div class="col-sm-12">.</div>

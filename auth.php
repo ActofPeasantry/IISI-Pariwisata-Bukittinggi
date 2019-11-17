@@ -16,7 +16,7 @@ if(isset($_GET['op'])){
    $_SESSION['id_role'] = $c['id_role'];
    //$_SESSION['id_pemb']= $data['id_pemb'];
    if($c['id_role']=='1'){
-    header("localhost/pariwisata/index2.php");
+    header("localhost/wisatasumbar/index2.php");
    }
    else if($c['id_role']==2){
     $a= $c['email'];
@@ -24,7 +24,7 @@ if(isset($_GET['op'])){
     $c1 = pg_fetch_array($cek1);
     $_SESSION['id_travel']= $c1['id_travel'];
     echo "aaaaaaaaaaaa";
-    header("localhost/pariwisata/index3.php");
+    header("localhost/wisatasumbar/index3.php");
     //
    }
   }
@@ -48,4 +48,3 @@ else if($op=="out"){
   unset($_SESSION['id_role']);
   header("location:login.php");
 }
-?>

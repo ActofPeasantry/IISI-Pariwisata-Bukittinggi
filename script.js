@@ -1,4 +1,4 @@
-var server = "https://gissurya.org/wisatasumbar/";
+var server = "http://localhost/wisatasumbar/";
     var map;
     var markersDua = [];
     var markersDkt = [];
@@ -23,6 +23,7 @@ function init()
   tampildigitmas();
   tampildigitrav();
   cityTampil();
+  tampilsemua()
 }
 
 function cityTampil(gid)
@@ -242,43 +243,44 @@ function tampilanobjek(gid)
       markersDua = [];
     for (var i in rows)
     {
-      var row = rows [i];
-      for (var x in row)
-      {
-      var row1 = row [x];
-      var id = row1.id;
-      // var id_souvenir = row.id;
-      // var id_restaurant = row.id;
-      // var id_tourism = row.id;
-      // var id_workship_place = row.id;
-      var name = row1.name;
-      var status = row1.status;
-      var lat = row1.latitude;
-      var lon = row1.longitude;
-      centerBaru = new google.maps.LatLng(lat,lon);
-      map.setCenter(centerBaru);
-      console.log(id);
-      console.log(status);
-      map.setZoom(10);
-      var marker =  new google.maps.Marker({
-                    position: centerBaru,
-                    animation: google.maps.Animation.DROP,
-                    map: map
-                    });
-      if (status ==4){
-        klikInfoWindow_tw(id,marker);        
-      } else if (status ==2) {
-        klikInfoWindow_masjid(id,marker);        
-      } else if (status ==3) {
-        klikInfoWindow_rm(id,marker);        
-      } else if (status ==1) {
-        klikInfoWindow_souvenir(id,marker);        
-      }
+        var row = rows [i];
+        for (var x in row)
+          {
+              var row1 = row [x];
+              var id = row1.id;
+              // var id_souvenir = row.id;
+              // var id_restaurant = row.id;
+              // var id_tourism = row.id;
+              // var id_workship_place = row.id;
+              var name = row1.name;
+              var status = row1.status;
+              var lat = row1.latitude;
+              var lon = row1.longitude;
+              centerBaru = new google.maps.LatLng(lat,lon);
+              map.setCenter(centerBaru);
+              console.log(id);
+              console.log(status);
+              map.setZoom(10);
+              var marker =  new google.maps.Marker({
+                            position: centerBaru,
+                            animation: google.maps.Animation.DROP,
+                            map: map
+                            });
+                            
+              if (status ==4){
+                klikInfoWindow_tw(id,marker);        
+              } else if (status ==2) {
+                klikInfoWindow_masjid(id,marker);        
+              } else if (status ==3) {
+                klikInfoWindow_rm(id,marker);        
+              } else if (status ==1) {
+                klikInfoWindow_souvenir(id,marker);        
+              }
 
-      markersDua.push(marker);
-      map.setCenter(centerBaru);
-    }
-    }
+              markersDua.push(marker);
+              map.setCenter(centerBaru);
+          }
+     }
     }
   },
   error: function(xmlHTTPrequest)
@@ -1490,66 +1492,66 @@ function rmterdekat(id)
 }
 
 function cariobjek(){
-      $('#cariobjek').empty();
-     
-      var city = document.getElementById('city').value;
-      var objek =document.getElementById('objek').value;
-      
-      if (objek!=0 && city!=0){
-        $.ajax({url: "https://gissurya.org/wisatasumbar/cariobjek.php?objek="+objek+"&city="+city, data: "", dataType: 'json', success: function(rows){
-          console.log(rows);
-          console.log("https://gissurya.org/wisatasumbar/cariobjek.php?objek="+objek+"&city="+city); 
-            if (objek=="1") {
-              // console.log("jalan1");
-              for (var i in rows){
-                
-                var row = rows[i];
-                var id = row.id;
-                var name = row.name;
-                console.log(id);
-                console.log(name);
-                $('#cariobjek').append('<option value="'+id+'">'+name+'</option>');
-              }
-            }
-            else if (objek=="2") 
-            {
-              for (var i in rows)
-              {
-                var row = rows[i];
-                var id = row.id;
-                var name = row.name;
-                console.log(id);
-                console.log(name);
-                $('#cariobjek').append('<option value="'+id+'">'+name+'</option>');
-              }
-            }
-            else if (objek=="3") 
-            {
-              for (var i in rows)
-              {
-                var row = rows[i];
-                var id = row.id;
-                var name = row.name;
-                console.log(id);
-                console.log(name);
-                $('#cariobjek').append('<option value="'+id+'">'+name+'</option>');
-              }
-            }
-            else 
-            {
-              for (var i in rows)
-              {
-                var row = rows[i];
-                var id = row.id;
-                var name = row.name;
-                console.log(id);
-                console.log(name);
-                $('#cariobjek').append('<option value="'+id+'">'+name+'</option>');
-              }
-            }
+  $('#cariobjek').empty();
+ 
+  var city = document.getElementById('city').value;
+  var objek =document.getElementById('objek').value;
+  
+  if (objek!=0 && city!=0){
+    $.ajax({url: "http://localhost/wisatasumbar/cariobjek.php?objek="+objek+"&city="+city, data: "", dataType: 'json', success: function(rows){
+      console.log(rows);
+      console.log("http://localhost/wisatasumbar/cariobjek.php?objek="+objek+"&city="+city); 
+        if (objek=="1") {
+          // console.log("jalan1");
+          for (var i in rows){
+            
+            var row = rows[i];
+            var id = row.id;
+            var name = row.name;
+            console.log(id);
+            console.log(name);
+            $('#cariobjek').append('<option value="'+id+'">'+name+'</option>');
+          }
+        }
+        else if (objek=="2") 
+        {
+          for (var i in rows)
+          {
+            var row = rows[i];
+            var id = row.id;
+            var name = row.name;
+            console.log(id);
+            console.log(name);
+            $('#cariobjek').append('<option value="'+id+'">'+name+'</option>');
+          }
+        }
+        else if (objek=="3") 
+        {
+          for (var i in rows)
+          {
+            var row = rows[i];
+            var id = row.id;
+            var name = row.name;
+            console.log(id);
+            console.log(name);
+            $('#cariobjek').append('<option value="'+id+'">'+name+'</option>');
+          }
+        }
+        else 
+        {
+          for (var i in rows)
+          {
+            var row = rows[i];
+            var id = row.id;
+            var name = row.name;
+            console.log(id);
+            console.log(name);
+            $('#cariobjek').append('<option value="'+id+'">'+name+'</option>');
+          }
+        }
 
-          }});//end ajax
-        }//end if
+      }});//end ajax
+    }//end if
 }
 
 function show2(){
@@ -1738,7 +1740,7 @@ function showdetpackage(id){
   $('#carides2').show()
   hapusInfo();
   hapusmarker();
-  $.ajax({url: "https://gissurya.org/wisatasumbar/detailPak.php?id="+id, data: "", dataType: 'json', success: function(rows){
+  $.ajax({url: "http://localhost/wisatasumbar/detailPak.php?id="+id, data: "", dataType: 'json', success: function(rows){
   var i=1;
 
        document.getElementById('hasilcarides').innerHTML = ""; 
@@ -1761,7 +1763,7 @@ function showdetpackage(id){
 function showpackage(id){
   $('#caritrav').show()
   console.log(id);
-  $.ajax({url: "https://gissurya.org/wisatasumbar/pak.php?id="+id, data: "", dataType: 'json', success: function(rows){
+  $.ajax({url: "http://localhost/wisatasumbar/pak.php?id="+id, data: "", dataType: 'json', success: function(rows){
     console.log('asd');
   var z=1;
 
@@ -1785,7 +1787,7 @@ function showpackage(id){
 function showpackage1(id){
   $('#caritrav').show()
   console.log(id);
-  $.ajax({url: "https://gissurya.org/wisatasumbar/pak.php?id="+id, data: "", dataType: 'json', success: function(rows){
+  $.ajax({url: "http://localhost/wisatasumbar/pak.php?id="+id, data: "", dataType: 'json', success: function(rows){
     console.log('asd');
   var z=1;
   
@@ -1813,9 +1815,9 @@ function cariobjek(){
       var objek =document.getElementById('objek').value;
       
       if (objek!=0 && city!=0){
-        $.ajax({url: "https://gissurya.org/wisatasumbar/cariobjek.php?objek="+objek+"&city="+city, data: "", dataType: 'json', success: function(rows){
+        $.ajax({url: "http://localhost/wisatasumbar/cariobjek.php?objek="+objek+"&city="+city, data: "", dataType: 'json', success: function(rows){
           console.log(rows);
-          console.log("https://gissurya.org/wisatasumbar/cariobjek.php?objek="+objek+"&city="+city); 
+          console.log("http://localhost/wisatasumbar/cariobjek.php?objek="+objek+"&city="+city); 
             if (objek=="1") {
               // console.log("jalan1");
               for (var i in rows){
@@ -1966,46 +1968,46 @@ function tampilsemuapaket(aab){
   }     
 
 
-function tampilsemua(){ 
-  console.log("masuk");
-  $.ajax({ 
-        url: server+'lihatsemua.php', data: "", dataType: 'json', success: function(rows)
-          { 
-            if(rows==null)
-            {
-              alert('Data Tidak Ditemukan');
+  function tampilsemua(){ 
+    console.log("masuk");
+    $.ajax({ 
+          url: server+'lihatsemua.php', data: "", dataType: 'json', success: function(rows)
+            { 
+              if(rows==null)
+              {
+                alert('Data Tidak Ditemukan');
+              }
+  
+             document.getElementById('hasilcaritempat').innerHTML = "";  
+  
+            for (var i in rows) 
+              {   
+                var row = rows[i];
+                var id  = row.id;
+               var id_travel  = row.id_travel;
+                var name  = row.name;
+            //  var price = row.price;
+                console.log(name);
+              //   centerBaru = new google.maps.LatLng(latitude, longitude);
+              //   marker = new google.maps.Marker
+              // ({
+              //   position: centerBaru,
+              //   icon:'assets/ico/marker_masjid.png',
+              //   map: map,
+              //   animation: google.maps.Animation.DROP,
+              // });
+          //       console.log(latitude);
+          //       console.log(longitude);
+          //       markersDua.push(marker);
+          //       map.setCenter(centerBaru);
+          // klikInfoWindow(id);
+                //map.setZoom(14);
+                $('#hasilcaritempat').append("<tr><td>"+name+"</td><td><a role='button' title='info' class='btn btn-success fa fa-info' value='Detail' onclick='showpackage1(\""+id+"\")'></a></td><td><a role='button' title='gallery' class='btn btn-success fa fa-photo' value='Route' onclick='gallery2(\""+id+"\")'></a></td><td><a role='button' title='travel' class='btn btn-success fa fa-bus' value='travel' onclick='detailtravel(\""+id+"\")'></a></td></tr>");
+              } 
+             
             }
-
-           document.getElementById('hasilcaritempat').innerHTML = "";  
-
-          for (var i in rows) 
-            {   
-              var row = rows[i];
-              var id  = row.id;
-             var id_travel  = row.id_travel;
-              var name  = row.name;
-          //  var price = row.price;
-              console.log(name);
-            //   centerBaru = new google.maps.LatLng(latitude, longitude);
-            //   marker = new google.maps.Marker
-            // ({
-            //   position: centerBaru,
-            //   icon:'assets/ico/marker_masjid.png',
-            //   map: map,
-            //   animation: google.maps.Animation.DROP,
-            // });
-        //       console.log(latitude);
-        //       console.log(longitude);
-        //       markersDua.push(marker);
-        //       map.setCenter(centerBaru);
-        // klikInfoWindow(id);
-              //map.setZoom(14);
-              $('#hasilcaritempat').append("<tr><td>"+name+"</td><td><a role='button' title='info' class='btn btn-success fa fa-info' value='Detail' onclick='showpackage1(\""+id+"\")'></a></td><td><a role='button' title='gallery' class='btn btn-success fa fa-photo' value='Route' onclick='gallery2(\""+id+"\")'></a></td><td><a role='button' title='travel' class='btn btn-success fa fa-bus' value='travel' onclick='detailtravel(\""+id+"\")'></a></td></tr>");
-            } 
-           
-          }
-        }); 
-  }     
+          }); 
+    }     
 
 function mybooking(aab){ 
 

@@ -149,7 +149,7 @@ while($row = pg_fetch_array($hasil)){
       <div  id='info'>
           <form method="post" action="addinfo.php">
             <input type="text" class="form-control hidden " id="id" name="id" value="<?php echo $id ?>">
-            <input type="text" class="form-control hidden " id="username" name="username" value="<?php echo $username ?>">
+            <input type="text" class="form-control hidden " id="username" name="username" value="">
             <table class="table">
               <tbody  style='vertical-align:top;'>
                 <tr><td><b>Essential Information :</td><td><textarea cols="40" rows="5" name="info"></textarea></td></tr>

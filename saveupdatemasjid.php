@@ -21,4 +21,4 @@ if(isset($_POST['id']))
         echo "error";
     }
     echo "<script>document.location='masjid.php'</script>";
-?>
+}

@@ -24,7 +24,7 @@ $email = $_POST['email'];
 $token = date("Ymdhi").$username;
 $_SESSION['token']=$token;
 $_SESSION['user']=$username;
-$homepage = file_get_contents("https://gissurya.org/wisatasumbar/mailtemplate.php?token=$token&user=$username");
+$homepage = file_get_contents("http:///mailtemplate.php?token=$token&user=$username");
    
     if($cek)
   {
@@ -82,7 +82,7 @@ $homepage = file_get_contents("https://gissurya.org/wisatasumbar/mailtemplate.ph
     </div>
     <div id='badan'>
       <p>Click the link below to verify your account</p>
-      <a href='https://gissurya.org/wisatasumbar/admin/pages/verifikasi.php?token=$token&user=$username'>Click on this link to confirm your email</a> <!-- EDIT UNTUK HOSTING -->
+      <a href='/admin/pages/verifikasi.php?token=$token&user=$username'>Click on this link to confirm your email</a> <!-- EDIT UNTUK HOSTING -->
     </div>
     <div id='kaki'>
       <h3>end of discusion</h3>
@@ -99,7 +99,7 @@ $homepage = file_get_contents("https://gissurya.org/wisatasumbar/mailtemplate.ph
     }
     else 
     {
-    header('location:https://gissurya.org/wisatasumbar/admin/checkemailjo.php');
+    header('location:/admin/clocalhostphp');
     }
     
   }
@@ -116,4 +116,3 @@ $homepage = file_get_contents("https://gissurya.org/wisatasumbar/mailtemplate.ph
     // else{
     //   echo "gagal";
     // }
-?>

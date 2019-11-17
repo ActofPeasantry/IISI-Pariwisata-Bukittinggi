@@ -32,9 +32,6 @@ include("connect.php");
     <script src="assets/js/chart-master/Chart.js"></script>
     <script src="script.js"></script>
 
-
-   
-    </script>
   </head>
   
   <body onload="init();hapusmarker()">
@@ -143,7 +140,9 @@ include("connect.php");
                               </select>
                               <br>
                               <br>
-                                <select class="form-control select2" style="width: 100%;" id="cariobjek" ></select>
+                                <select class="form-control select2" style="width: 100%;" id="cariobjek" >
+                                 
+                                </select>
                               <br>
                                 <button type="submit" class="btn btn-default" id="carides"  value="cari" onclick="carides()"><i class="fa fa-search"></i></button>
                           </div>
@@ -187,10 +186,12 @@ include("connect.php");
                        <a type="button" onclick="legenda()" id="showlegenda" class="btn btn-default" data-toggle="tooltip" title="Legenda" style="margin-right: 7px;"><i class="fa fa-eye"></i>
                        </a>
                        </label>
-                      <!--  <label id="seeall">
+
+                       <label id="seeall">
                      <a type="button" id="showall" onclick="tampilsemua()" class="btn btn-default btn-sm " data-toggle="tooltip"  
-                      style="margin-right: 7px;"><i class="fa fa-database" style="color:black;"> </i></a> -->
+                      style="margin-right: 7px;"><i class="fa fa-database" style="color:black;"> </i></a>
                       </label>
+
                      </header>
                      
                       <div class="panel-body">
@@ -229,7 +230,7 @@ include("connect.php");
   }
   .class1
   {
-    background-image: url("https://gissurya.org/wisatasumbar/assets/img/mas.png");
+    background-image: url("https:///assets/img/mas.png");
     background-repeat: no-repeat;
     padding-left: 30px;
     background-size: 40%;
@@ -237,7 +238,7 @@ include("connect.php");
   }
   .class2
   {
-    background-image: url("https://gissurya.org/wisatasumbar/assets/img/rm.png");
+    background-image: url("localhost/assets/assets/img/rm.png");
     background-repeat: no-repeat;
     padding-left: 30px;
     background-size: 40%;
@@ -245,7 +246,7 @@ include("connect.php");
   }
   .class3
   {
-    background-image: url("https://gissurya.org/wisatasumbar/assets/img/tw.png");
+    background-image: url("localhost/assets/assets/img/tw.png");
     background-repeat: no-repeat;
     padding-left: 30px;
     background-size: 40%;
@@ -253,7 +254,7 @@ include("connect.php");
   }
   .class4
   {
-    background-image: url("https://gissurya.org/wisatasumbar/assets/img/sov.png");
+    background-image: url("localhost/assets/assets/img/sov.png");
     background-repeat: no-repeat;
     padding-left: 30px;
     background-size: 40%;
@@ -261,7 +262,7 @@ include("connect.php");
   }
   .class5
   {
-    background-image: url("https://gissurya.org/wisatasumbar/assets/img/trav.png");
+    background-image: url("localhost/assets/assets/img/trav.png");
     background-repeat: no-repeat;
     padding-left: 30px;
     background-size: 40%;
@@ -371,7 +372,8 @@ include("connect.php");
                             <div class="form-group" id="hasilcari1">
                               <table class="table table-bordered" id='hasilcaritempat'>
                               </table>  
-                            </div>                   
+                            </div>   
+
                         </div>
                     </div>
                 </section>
@@ -436,7 +438,8 @@ include("connect.php");
   <script type="text/javascript" src="assets/js/bootstrap-datetimepicker/js/bootstrap-datetimepicker.js"></script>
   <script type="text/javascript" src="assets/js/bootstrap-daterangepicker/moment.min.js"></script>
   <script type="text/javascript" src="assets/js/bootstrap-timepicker/js/bootstrap-timepicker.js"></script>
-  <script src="assets/js/advanced-form-components.js"></script>  
+  <script src="assets/js/advanced-form-components.js"></script>
+  
   </body>
 </html>
 
