@@ -1,4 +1,4 @@
-var server = "http://localhost/wisatasumbar/";
+var server = "http://localhost/wisatahalal/";
     var map;
     var markersDua = [];
     var markersDkt = [];

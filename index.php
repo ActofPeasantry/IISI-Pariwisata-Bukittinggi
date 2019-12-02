@@ -187,10 +187,10 @@ include("connect.php");
                        </a>
                        </label>
 
-                       <label id="seeall">
+                       <!-- <label id="seeall">
                      <a type="button" id="showall" onclick="tampilsemua()" class="btn btn-default btn-sm " data-toggle="tooltip"  
                       style="margin-right: 7px;"><i class="fa fa-database" style="color:black;"> </i></a>
-                      </label>
+                      </label> -->
 
                      </header>
                      
